@@ -1,0 +1,15 @@
+.container{
+    margin-top:-3rem;
+}
+.background{
+    z-index:-1;
+    width:65rem;
+    position:fixed;
+    top: -5rem;
+    left:10rem;
+}
+.hello{
+    margin-top:10rem;
+    margin-left: -10rem;
+    color: white;
+}
