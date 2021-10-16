@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SortURLService } from '../sort-url.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { url } from '../model';
 @Component({
   selector: 'app-dashboard',
@@ -65,11 +66,14 @@ export class DashboardComponent implements OnInit {
       }
       this.ShortUrlService.saveURL(this.UrlObject).subscribe(() => {
         this.successflag=1;
+        this.loadData();
+        console.log(this.UrlData);
       },() => {
         alert("Something Went Wrong")
       })
       
     }
+    
 
   }
 
