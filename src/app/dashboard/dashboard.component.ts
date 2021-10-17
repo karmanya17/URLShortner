@@ -89,7 +89,7 @@ export class DashboardComponent implements OnInit {
 
   }
   truncate(str:string){
-    let n=80;
+    let n=65;
     return (str.length > n) ? str.substr(0, n-1) + '....' : str;
   };
   deleteData(id:any){
