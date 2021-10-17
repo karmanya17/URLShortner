@@ -67,6 +67,7 @@ export class RedirectPageComponent implements OnInit {
             }
             this.ShortUrlService.updateUrlById(this.UrlObject,url.id).subscribe((data)=>{
               //console.log(data);
+              this.ngOnInit();
              window.location.href = this.UrlObject.longURL;
             })
 
