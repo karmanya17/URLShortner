@@ -3,6 +3,7 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SortURLService } from '../sort-url.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { url } from '../model';
+import { datecount } from '../model';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -15,7 +16,8 @@ export class DashboardComponent implements OnInit {
   UrlObject={
     "longURL":"",
     "short":"",
-    "count":0
+    "count":0,
+    "time":[]
   }
   shortUrl:FormGroup
   constructor(private ShortUrlService:SortURLService) { 
@@ -32,8 +34,9 @@ export class DashboardComponent implements OnInit {
     this.ShortUrlService.getAllURL().subscribe((data) => {
       console.log(data);
       this.UrlData=data;
-    },() => {
-      alert("Something Went Wrong")
+      this.UrlData.forEach((url)=>{
+        url.longURL=this.truncate(url.longURL)
+      })
     })
 
   }
@@ -62,7 +65,8 @@ export class DashboardComponent implements OnInit {
       this.UrlObject={
         "longURL":this.shortUrl.value.longURL,
         "short":this.generateShort(),
-        "count":0
+        "count":0,
+        "time":[]
       }
       this.ShortUrlService.saveURL(this.UrlObject).subscribe(() => {
         this.successflag=1;
@@ -76,6 +80,9 @@ export class DashboardComponent implements OnInit {
     
 
   }
-
+  truncate(str:string){
+    let n=80;
+    return (str.length > n) ? str.substr(0, n-1) + '....' : str;
+  };
 
 }

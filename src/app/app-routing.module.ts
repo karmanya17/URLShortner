@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component'; 
 import { RedirectPageComponent } from './redirect-page/redirect-page.component';
-
+import { StatsComponent } from './stats/stats.component';
 const routes: Routes = [
   {
     path:"",
@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path:"p/:id",
     component:RedirectPageComponent
+  },
+  {
+    path:"stats/:id",
+    component:StatsComponent
   }
 ];
 

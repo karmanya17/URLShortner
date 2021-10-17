@@ -36,7 +36,7 @@
                     <td>{{url.longURL}}</td>
                     <td class="text-center"><a [routerLink]="['/p',url.short]" target="_blank">http://localhost:4200/p/{{url.short}}</a></td>
                     <td class="text-center">{{url.count}}</td>
-                    <td class="text-center"><button class="btn btn-primary btn-sm">Stats<i class="fa fa-chart-line p-1"></i></button></td>
+                    <td class="text-center"><a class="btn btn-primary btn-sm" [routerLink]="['/stats',url.short]">Stats<i class="fa fa-chart-line p-1"></i></a></td>
                 </tr>
                 </tbody>
 

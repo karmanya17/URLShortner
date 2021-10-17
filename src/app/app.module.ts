@@ -11,6 +11,9 @@ import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RedirectPageComponent } from './redirect-page/redirect-page.component';
+import { StatsComponent } from './stats/stats.component';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,14 +22,18 @@ import { RedirectPageComponent } from './redirect-page/redirect-page.component';
     LoginComponent,
     SignupComponent,
     DashboardComponent,
-    RedirectPageComponent
+    RedirectPageComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

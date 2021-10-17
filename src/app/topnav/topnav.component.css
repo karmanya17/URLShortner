@@ -33,3 +33,10 @@
     transition: .3s all ease; }
     a, a:hover {
       text-decoration: none !important; }
+
+.black{
+    color:black
+}
+.pointer{
+    cursor: pointer;
+}
