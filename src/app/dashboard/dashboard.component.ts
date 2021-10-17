@@ -10,9 +10,16 @@ import { datecount } from '../model';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  href=""
   UrlData:Array<url>=[];
   successflag=0;
+  flag=0;
+  currentdate = new Date(); 
+  datetime =  this.currentdate.getDate() + "/"
+                + (this.currentdate.getMonth()+1)  + "/" 
+                + this.currentdate.getFullYear()
+  short:string="";
+  count=0
   UrlObject={
     "longURL":"",
     "short":"",
@@ -35,6 +42,7 @@ export class DashboardComponent implements OnInit {
       console.log(data);
       this.UrlData=data;
       this.UrlData.forEach((url)=>{
+        this.href=url.longURL
         url.longURL=this.truncate(url.longURL)
       })
     })
@@ -89,6 +97,47 @@ export class DashboardComponent implements OnInit {
     this.ShortUrlService.deleteUserById(id).subscribe((data) => {
       this.loadData()
     })
+  }
+  changecount(short:string){
+    console.log(short);
+      this.ShortUrlService.getAllURL().subscribe((data) => {
+        console.log(data)
+        data.forEach((url)=>{
+          if(url.short===short)
+          { 
+          console.log(url.time.length);
+          for(let i=0;i<url.time.length;i++){
+            console.log(url.time[i].datetime)
+            console.log(this.datetime)
+              if(url.time[i].datetime==this.datetime){
+                console.log("data match")
+                this.count=url.time[i].count++;
+                this.flag=1;
+                break;
+              }
+              
+
+             }
+             if(this.flag==0)
+             {
+              url.time.push({"datetime":this.datetime,"count":1})
+             }
+              let UrlObj={
+              "longURL":url.longURL,
+              "short":url.short,
+              "count":url.count+1,
+              "time":url.time
+            }
+            this.ShortUrlService.updateUrlById(UrlObj,url.id).subscribe((data)=>{
+              console.log(data);
+             //window.location.href = this.UrlObject.longURL;
+            })
+
+          }
+        })
+        
+      })
+
   }
 
 }

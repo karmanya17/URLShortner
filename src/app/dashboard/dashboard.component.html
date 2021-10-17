@@ -34,7 +34,7 @@
             <tbody>
                 <tr *ngFor="let url of UrlData">
                     <td>{{url.longURL}}</td>
-                    <td class="text-center"><a [routerLink]="['/p',url.short]" target="_blank">http://localhost:4200/p/{{url.short}}</a></td>
+                    <td class="text-center"><a href={{href}} (click)="changecount(url.short)" target="_blank">http://localhost:4200/p/{{url.short}}</a></td>
                     <td class="text-center">{{url.count}}</td>
                     <td class="text-center"><button class="btn btn-primary margin-right" [routerLink]="['/stats',url.short]">Stats<i class="fa fa-chart-line p-1"></i></button>
                     <button class="btn btn-danger" (click)="deleteData(url.id)">Delete</button>
