@@ -17,6 +17,7 @@ export class StatsComponent implements OnInit {
   constructor(private activeRoute: ActivatedRoute,private router:Router,private ShortUrlService:SortURLService) { }
   view:any = [900, 250];
   count=0
+  href=""
   longurl=""
   shorturl=""
   createdAt:String=""
@@ -44,7 +45,8 @@ colorScheme = {
             this.count=url.count
             this.longurl=this.truncate(url.longURL)
             this.createdAt=url.time[0].datetime
-            
+            this.shorturl=url.short
+            this.href=url.longURL
             url.time.forEach((urltime)=>{
               this.urlData.push({"name":urltime.datetime,"value":urltime.count})
             })

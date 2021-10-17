@@ -16,10 +16,10 @@ export class SortURLService {
   getAllURL(){
     return this.http.get<Array<url>>(`https://615f2120af36590017204880.mockapi.io/shorturl`)
   }
-  getURLbyID(urlId:string){
-    return this.http.get<Array<url>>(`https://615f2120af36590017204880.mockapi.io/shorturl/${urlId}`)
-  }
   updateUrlById(urldata:url,urlId:number|undefined){
     return this.http.put(`https://615f2120af36590017204880.mockapi.io/shorturl/${urlId}`,urldata)
+  }
+  deleteUserById(id:number){
+    return this.http.delete(`https://615f2120af36590017204880.mockapi.io/shorturl/${id}`)
   }
 }

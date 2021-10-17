@@ -8,7 +8,7 @@
     </div>
 </form>
 <div *ngIf="successflag==1" class="mt-2">
-    <h3 class="orangeText">Link Successfully Shrinked</h3>
+    <h3 class="orangeText">URL Successfully Shrinked</h3>
 </div>
 <div class="card-body p-0 mt-5">
     <div class="table-responsive">
@@ -36,7 +36,9 @@
                     <td>{{url.longURL}}</td>
                     <td class="text-center"><a [routerLink]="['/p',url.short]" target="_blank">http://localhost:4200/p/{{url.short}}</a></td>
                     <td class="text-center">{{url.count}}</td>
-                    <td class="text-center"><a class="btn btn-primary btn-sm" [routerLink]="['/stats',url.short]">Stats<i class="fa fa-chart-line p-1"></i></a></td>
+                    <td class="text-center"><button class="btn btn-primary margin-right" [routerLink]="['/stats',url.short]">Stats<i class="fa fa-chart-line p-1"></i></button>
+                    <button class="btn btn-danger" (click)="deleteData(url.id)">Delete</button>
+                    </td>
                 </tr>
                 </tbody>
 

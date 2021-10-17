@@ -84,5 +84,11 @@ export class DashboardComponent implements OnInit {
     let n=80;
     return (str.length > n) ? str.substr(0, n-1) + '....' : str;
   };
+  deleteData(id:any){
+    console.log(id)
+    this.ShortUrlService.deleteUserById(id).subscribe((data) => {
+      this.loadData()
+    })
+  }
 
 }
