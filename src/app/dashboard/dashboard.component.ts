@@ -130,6 +130,7 @@ export class DashboardComponent implements OnInit {
             }
             this.ShortUrlService.updateUrlById(UrlObj,url.id).subscribe((data)=>{
               console.log(data);
+              this.ngOnInit();
              //window.location.href = this.UrlObject.longURL;
             })
 
