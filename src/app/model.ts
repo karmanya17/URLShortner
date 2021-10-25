@@ -13,3 +13,12 @@ export interface urlChart{
     name:String,
     value:number
 }
+export interface user{
+    username:string,
+    passeord:string,
+    dob:string
+}
+export interface LoginUser{
+    username:string,
+    password:string
+}

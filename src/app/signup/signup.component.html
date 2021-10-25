@@ -6,22 +6,22 @@
         <div class="col-sm-6 w-50">
             <div class="card w-50">
                 <div class="card-body">
-                    <form action="/register" method="POST">
+                    <form action="/register" [formGroup]="signupForm" (ngSubmit)="submit()">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input style="font-family:Montserrat" type="email" class="form-control" name="username">
+                            <input style="font-family:Montserrat" type="email" class="form-control" formControlName="username">
                         </div>
                         <div class="form-group mt-2">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" name="password">
+                            <input type="password" class="form-control" formControlName="password">
                         </div>
                         <div class="form-group mt-2">
                             <label for="confirm password">Confirm Password</label>
-                            <input type="password" class="form-control" name="confirmpassword">
+                            <input type="password" class="form-control" formControlName="confirmpassword">
                         </div>
                         <div class="form-group mt-2">
                             <label for="password">Date of Birth</label>
-                            <input type="date" class="form-control" name="dob">
+                            <input type="date" class="form-control" formControlName="dob">
                         </div>
                         <button type="submit" class="btn btn-dark mt-3">Sign Up</button>
                     </form>
