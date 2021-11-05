@@ -10,6 +10,11 @@
     font-weight:bold ;
     margin-left: 1rem;
     margin-right: 1rem;
+    transition:0.2s;
+}
+.loginbtn:hover{
+    background: #bb2f2a;
+    box-shadow:0 0 10px #e75266, 0 0 40px #e75266,0 0 80px #e75266; 
 }
 .signupbtn{
     color:#FFFFFF;
