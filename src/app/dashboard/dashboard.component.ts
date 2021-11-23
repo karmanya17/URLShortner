@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
   }
   loadData(){
     this.ShortUrlService.getAllURL().subscribe((data) => {
-      console.log(data);
+     // console.log(data);
       this.UrlData=data;
       this.UrlData.forEach((url)=>{
         this.href=url.longURL
