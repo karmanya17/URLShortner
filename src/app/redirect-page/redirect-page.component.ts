@@ -28,7 +28,7 @@ export class RedirectPageComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.params.subscribe((paramsData) => {
       this.short = paramsData.id;
-      console.log(this.short);
+      // console.log(this.short);
       this.ShortUrlService.getAllURL().subscribe((data) => {
         console.log(data)
         data.forEach((url)=>{
