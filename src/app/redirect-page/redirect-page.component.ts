@@ -40,9 +40,9 @@ export class RedirectPageComponent implements OnInit {
           //  if(url.time.length==0){
           //   url.time.push({"datetime":this.datetime,"count":1})
           //  }   
-          console.log(url.time.length);
+       //   console.log(url.time.length);
           for(let i=0;i<url.time.length;i++){
-            console.log(url.time[i].datetime)
+            //console.log(url.time[i].datetime)
             console.log(this.datetime)
               if(url.time[i].datetime==this.datetime){
                 console.log("data match")
