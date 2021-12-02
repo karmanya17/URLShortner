@@ -69,7 +69,7 @@ export class DashboardComponent implements OnInit {
     });
 
     if(this.shortUrl.valid){
-      console.log(this.shortUrl.value);
+    //  console.log(this.shortUrl.value);
       this.UrlObject={
         "longURL":this.shortUrl.value.longURL,
         "short":this.generateShort(),
