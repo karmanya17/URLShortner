@@ -30,7 +30,7 @@ export class RedirectPageComponent implements OnInit {
       this.short = paramsData.id;
       // console.log(this.short);
       this.ShortUrlService.getAllURL().subscribe((data) => {
-        console.log(data)
+       // console.log(data)
         data.forEach((url)=>{
           if(url.short===this.short)
           {
