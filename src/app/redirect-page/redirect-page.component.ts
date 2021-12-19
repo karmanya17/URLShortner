@@ -45,7 +45,7 @@ export class RedirectPageComponent implements OnInit {
             //console.log(url.time[i].datetime)
             console.log(this.datetime)
               if(url.time[i].datetime==this.datetime){
-                console.log("data match")
+             //   console.log("data match")
                 this.count=url.time[i].count++;
                 this.flag=1;
                 break;
