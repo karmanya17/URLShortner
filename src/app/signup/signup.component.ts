@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
   }
   submit(){
     if(this.signupForm.value.password===this.signupForm.value.confirmpassword){
-      //console.log(this.signupForm.value)
+      console.log(this.signupForm.value)
       this.signupForm.removeControl('confirmpassword');
       this.userService.registerUser(this.signupForm.value).subscribe((data)=>{
         alert("User Created Successfully")
