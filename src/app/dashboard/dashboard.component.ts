@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
   
   ngOnInit(): void {
     this.loadData();
-    console.log(this.UrlData);
+    //console.log(this.UrlData);
   }
   loadData(){
     this.ShortUrlService.getAllURL().subscribe((data) => {
