@@ -21,7 +21,7 @@ export class StatsComponent implements OnInit {
   longurl=""
   shorturl=""
   createdAt:String=""
-// options
+//  options
 showXAxis = true;
 showYAxis = true;
 gradient = false;
@@ -39,7 +39,7 @@ colorScheme = {
       this.short = paramsData.id;
       //console.log(this.short);
       this.ShortUrlService.getAllURL().subscribe((data) => {
-        console.log(data);
+       // console.log(data);
         data.forEach((url)=>{
           if(this.short==url.short){
             this.count=url.count
